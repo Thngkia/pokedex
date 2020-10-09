@@ -1,0 +1,47 @@
+<%- include('./partials/header.ejs') %>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-quarter">  
+          <figure class="image is-square">
+            <img src="<%= pokemon.img %>">
+          </figure>
+        </div>
+
+        <div class="column is-offset-1 card is-one-quarter">
+          <ul class="px-2">
+            <li class="is-size-1 has-text-weight-semibold"><%= pokemon.name %></li>
+            <li class="is-size-4">POKEDEX ID: <%= pokemon.id %></li>
+
+            <li class="is-size-4">
+              Type: <% pokemon.type.forEach(element => { %>
+              <%= element %>
+              <% }) %>
+            </li>
+
+
+            <li>HP: <%= pokemon.stats['hp'] %></li>
+            <li>Attack: <%= pokemon.stats['attack'] %></li>
+            <li>Defense: <%= pokemon.stats['defense'] %></li>
+            <li>SP Attack: <%= pokemon.stats['spattack'] %></li>
+            <li>SP Defence: <%= pokemon.stats['spdefence'] %></li>
+            <li>Speed: <%= pokemon.stats['speed'] %></li>
+          </ul>
+          <div class="px-2 py-2">
+            <a href="/pokedex/<%= pokemon.id %>/edit" class="button is-primary">Edit</a>
+      
+            <form method="POST" action="/pokedex/<%= pokemon.id %>?_method=DELETE" class="is-inline">
+                <button type="submit" class="button is-danger">Delete</button>
+            </form>
+          </div>
+        </div>
+      
+       
+
+
+      </div>
+    </div>
+  </section>
+
+  </body>
+</html>
