@@ -1,0 +1,37 @@
+<%- include('./partials/header.ejs') %>
+    <form method="POST" action="/pokedex/<%= pokemon.id %>?_method=PATCH">
+        <section class="section">
+            <div class="container">
+                <div class="field">
+                    <label class="label">Name</label>
+                    <div class="control">
+                        <input name="name" class="input" type="text" value="<%= pokemon.name %>">
+                    </div>
+                </div>
+                  
+                <div class="field">
+                    <label class="label">Type</label>
+                    <div class="control">
+                    <input name="type" class="input" type="text" value="<%= pokemon.type[0] %>">
+                    </div>
+                </div>
+        
+                <div class="field">
+                <label class="label">Image Link</label>
+                <div class="control">
+                    <input name="image-link" class="input" type="text" value="<%= pokemon.img %>">
+                </div>
+                </div>
+        
+                <div class="control">
+                    <button class="button is-primary">Submit</button>
+        
+                    <a href="/pokedex" class="button is-primary">Home</a>
+                </div> 
+            
+            </div>
+          </section>
+    </form>
+  
+  </body>
+</html>
